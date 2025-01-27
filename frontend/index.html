@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Recipe Recommender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>Recipe Recommender</header>
+
+    <main>
+        <section id="ingredient-inputs">
+            <h3>Enter Available Ingredients</h3>
+                <form id="ingredient-form">
+                <label for="ingredients">Ingredients (comma-seperated):</label>
+                <input type="text" id="ingredients" placeholder="e.g., chicken, rice, tomato" required>
+                <button type="submit">Get Recipes</button>
+                </form>
+
+
+
+        </section>
+
+        <section id="recipe-results">
+            <h2>Recipes</h2>
+            <div id="recipe-container">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Recipe Recommender</p>
+    </footer>
+    <script src="script.js"></script>
+            
+
+
+
+</body>
+</html>
