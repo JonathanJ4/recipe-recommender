@@ -1,59 +1,67 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #ff7043;
     color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
 }
 
 main {
-    padding: 2rem;
+    padding: 20px;
 }
 
-section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: white;
-    border: 1px solid #ddd;
+#search-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     border-radius: 5px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form button {
-    margin: 0.5rem 0;
-    padding: 0.5rem;
+    border: 1px solid #ccc;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #ff7043;
     color: white;
     border: none;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #e64a19;
 }
 
-#recipes-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+#loading {
+    display: none;
+    font-size: 1.2rem;
+    color: #ff7043;
+    margin: 20px 0;
 }
 
-.recipe {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    background-color: #fff;
+#recipe-results {
+    display: none;
+}
+
+.recipe-card {
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
