@@ -1,67 +1,127 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    text-align: center;
+/* Reset some default spacing */
+* {
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #ff7043;
-    color: white;
-    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff4ec;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #d2691e;
+  }
+  
+  /* Hero section */
+  .hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff0e6;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Trending section */
+  .trending {
+    padding: 30px 0;
+  }
+  
+  .trending h3 {
+    margin-bottom: 20px;
     font-size: 1.5rem;
-}
-
-main {
-    padding: 20px;
-}
-
-#search-section {
+  }
+  
+  .trending-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
     background-color: white;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 500px;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input, select, button {
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .card img {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    background-color: #ff7043;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Explore More */
+  .explore {
+    padding: 30px 0;
+  }
+  
+  .explore h3 {
+    margin-bottom: 15px;
+  }
+  
+  .explore ol {
+    padding-left: 20px;
+    font-size: 1rem;
+  }
+  
+  /* CTA Section */
+  .search-cta {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fca854;
+  }
+  
+  .search-cta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  
+  .search-cta button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff7f50;
     color: white;
     border: none;
-    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #e64a19;
-}
-
-#loading {
-    display: none;
-    font-size: 1.2rem;
-    color: #ff7043;
-    margin: 20px 0;
-}
-
-#recipe-results {
-    display: none;
-}
-
-.recipe-card {
-    background: white;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  }
+  
+  .search-cta button:hover {
+    background-color: #e0673e;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
