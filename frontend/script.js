@@ -1,17 +1,17 @@
 const recipes=[
   {
     title: "Quick Lunch Ideas",
-    image: "placeholder aa",
+    image: "https://via.placeholder.com/250x150",
     description: "something", 
   },
   {
     title: "Quick Lunch Ideas",
-    image: "placeholder aa",
-    description: "something", 
+    image: "https://via.placeholder.com/250x150",
+    description: "https://via.placeholder.com/250x150", 
   },
   {
     title: "Quick Lunch Ideas",
-    image: "placeholder aa",
+    image: "https://via.placeholder.com/250x150",
     description: "something", 
   }
 ]
@@ -19,7 +19,7 @@ const recipes=[
 const trendingsection = document.querySelector('.trending')
 
 const cardContainer = document.createElement('div')
-cardContainer.classList.add('trending-card')
+cardContainer.classList.add('trending-cards')
 
 recipes.forEach(recipe => {
   const card = document.createElement('div');
@@ -34,3 +34,9 @@ recipes.forEach(recipe => {
   cardContainer.appendChild(card);
 });
 trendingSection.appendChild(cardContainer);
+
+
+const searchButton = document.querySelector('.search-cta button');
+searchButton.addEventListener('click', () => {
+  alert("Let's go find a recipe!");
+});
