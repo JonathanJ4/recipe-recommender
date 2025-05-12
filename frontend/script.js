@@ -1,25 +1,26 @@
-const recipes=[
+const recipes = [
   {
     title: "Quick Lunch Ideas",
     image: "https://via.placeholder.com/250x150",
-    description: "something", 
+    description: "Fast and tasty recipes you can make in minutes.",
   },
   {
-    title: "Quick Lunch Ideas",
+    title: "Hearty Breakfast",
     image: "https://via.placeholder.com/250x150",
-    description: "https://via.placeholder.com/250x150", 
+    description: "Start your day with a full and happy belly.",
   },
   {
-    title: "Quick Lunch Ideas",
+    title: "Comforting Dinner",
     image: "https://via.placeholder.com/250x150",
-    description: "something", 
+    description: "Warm meals to end your day on a cozy note.",
   }
-]
+];
 
-const trendingsection = document.querySelector('.trending')
 
-const cardContainer = document.createElement('div')
-cardContainer.classList.add('trending-cards')
+const trendingSection = document.querySelector('.trending');
+
+const cardContainer = document.createElement('div');
+cardContainer.classList.add('trending-cards');
 
 recipes.forEach(recipe => {
   const card = document.createElement('div');
@@ -33,10 +34,20 @@ recipes.forEach(recipe => {
 
   cardContainer.appendChild(card);
 });
+
 trendingSection.appendChild(cardContainer);
-
-
 const searchButton = document.querySelector('.search-cta button');
 searchButton.addEventListener('click', () => {
   alert("Let's go find a recipe!");
 });
+
+const searchInput = document.getElementById("searchInput")
+const resultsContainer = document.getElementById("recipeResults")
+
+function displayRecipes(filteredRecipes){
+  resultsContainer.innerHTML = "";
+
+  if (filteredRecipes.length == 0){
+    resultsContainer.innerHTML = "<p> No recipes found </p>"
+  }
+}
