@@ -50,4 +50,25 @@ function displayRecipes(filteredRecipes){
   if (filteredRecipes.length == 0){
     resultsContainer.innerHTML = "<p> No recipes found </p>"
   }
+  filteredRecipes.forEach(recipe => {
+    const card = document.createElement("div");
+    card.classList.add("card"); // Add styling if needed
+
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.title}">
+      <h3>${recipe.title}</h3>
+      <p>${recipe.description}</p>
+    `;
+
+    resultsContainer.appendChild(card);
+  });
+  searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+
+  const filtered = recipes.filter(recipe =>
+    recipe.title.toLowerCase().includes(query)
+  );
+
+  displayRecipes(filtered);
+});
 }
