@@ -41,6 +41,29 @@
       </nav>
     </div>
   </header>
+  
+<section class="max-w-4xl mx-auto px-6">
+  <!-- Meal‐type dropdown -->
+  <div class="mb-4 flex space-x-4">
+    <select id="mealTypeFilter"
+            class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-olive-light focus:border-olive">
+      <option value="">All Meals</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+    </select>
+
+    <!-- Your existing text search -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search recipes by title..."
+      class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-olive-light focus:border-olive"
+    />
+  </div>
+
+  <div id="recipeResults" class="mt-6"></div>
+</section>
 
   <!-- search section -->
   <main class="py-8">
