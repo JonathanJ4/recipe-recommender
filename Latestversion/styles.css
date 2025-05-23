@@ -124,3 +124,38 @@ header nav a:hover {
   grid-template-columns: 1fr;
   gap: 20px;
 }
+/* Container for your recipe cards */
+.trending-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Individual card styling */
+.card {
+  background: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Make the image fill the card’s width */
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Title & text inside card */
+.card h4 {
+  margin: 12px 0 4px;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0 12px 12px;
+  font-size: 0.9rem;
+  color: #555;
+}
