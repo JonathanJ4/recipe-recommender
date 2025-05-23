@@ -6,74 +6,94 @@ console.log("🔍 script.js loaded");
 const recipes = [
   {
     title: "Quick Lunch Ideas",
-    image: "https://via.placeholder.com/300x200?text=Lunch",
+    image: "https://picsum.photos/300/200?random=1",
     description: "Fast & tasty recipes ready in 15 minutes.",
     popularity: 80,
     mealType: "lunch"
   },
   {
     title: "Hearty Breakfast",
-    image: "https://via.placeholder.com/300x200?text=Breakfast",
+    image: "https://picsum.photos/300/200?random=2",
     description: "Start your day with a full and happy belly.",
     popularity: 95,
     mealType: "breakfast"
   },
   {
     title: "Cozy Dinner",
-    image: "https://via.placeholder.com/300x200?text=Dinner",
+    image:  "https://picsum.photos/300/200?random=3",
     description: "Warm and comforting meals for the evening.",
     popularity: 70,
     mealType: "dinner"
   }
 ];
 
-
-// 2) TRENDING injection—only on index.html
+// 1. Select the container and only run on landing page
 const trendingSection = document.querySelector(".trending");
 if (trendingSection) {
+  // make a Tailwind-powered grid container
   const cardContainer = document.createElement("div");
-  cardContainer.classList.add("trending-cards");
+  cardContainer.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6";
   trendingSection.appendChild(cardContainer);
 
-  const trending = recipes
+  // pick top-3 and render
+  recipes
     .slice()
     .sort((a, b) => b.popularity - a.popularity)
-    .slice(0, 3);
+    .slice(0, 3)
+    .forEach(recipe => {
+      const card = document.createElement("div");
+      card.className =
+        "bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden";
 
-  trending.forEach(recipe => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.innerHTML = `
-      <img src="${recipe.image}" alt="${recipe.title}">
-      <h4>${recipe.title}</h4>
-      <p>${recipe.description}</p>
-    `;
-    cardContainer.appendChild(card);
-  });
+      card.innerHTML = `
+        <img
+          class="w-full h-40 object-cover"
+          src="${recipe.image}"
+          alt="${recipe.title}"
+        />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg mb-1">${recipe.title}</h4>
+          <p class="text-gray-600 text-sm">${recipe.description}</p>
+        </div>
+      `;
+      cardContainer.appendChild(card);
+    });
 }
 
-// 3) SEARCH page filtering—only on search.html
-const searchInput = document.getElementById("searchInput");
-const resultsContainer = document.getElementById("recipeResults");
 
 if (searchInput && resultsContainer) {
   function displaySearchResults(list) {
     resultsContainer.innerHTML = "";
-    if (list.length === 0) {
-      resultsContainer.innerHTML = "<p>No recipes found.</p>";
+    if (!list.length) {
+      resultsContainer.innerHTML = `<p class="text-center text-gray-500">No recipes found.</p>`;
       return;
     }
+    // create a fresh grid
+    const grid = document.createElement("div");
+    grid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6";
+    resultsContainer.appendChild(grid);
+
     list.forEach(recipe => {
       const card = document.createElement("div");
-      card.classList.add("card");
+      card.className =
+        "bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden";
       card.innerHTML = `
-        <img src="${recipe.image}" alt="${recipe.title}">
-        <h4>${recipe.title}</h4>
-        <p>${recipe.description}</p>
+        <img
+          class="w-full h-40 object-cover"
+          src="${recipe.image}"
+          alt="${recipe.title}"
+        />
+        <div class="p-4">
+          <h4 class="font-semibold text-lg mb-1">${recipe.title}</h4>
+          <p class="text-gray-600 text-sm">${recipe.description}</p>
+        </div>
       `;
-      resultsContainer.appendChild(card);
+      grid.appendChild(card);
     });
   }
+
+  // initial render + input listener...
+
 
   // initial render
   displaySearchResults(recipes);
