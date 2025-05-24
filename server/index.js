@@ -16,7 +16,7 @@ mongoose
 
 
 const app = express();
-
+app.use('/images', express.static('public/images'));
 // Allow our frontend (served on a different port) to hit this API
 app.use(cors());
 
