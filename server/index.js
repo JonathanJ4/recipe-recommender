@@ -52,7 +52,18 @@ app.get('/recipes/trending', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+app.get('/recipes/:id', async (req, res) => {
+  try {
+    const one = await Recipe.findById(req.params.id);
+    if (!one) {
+      return res.status(404).json({ error: 'Recipe not found' });
+    }
+    res.json(one);
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({ error: err.message });
+  }
+});
 // POST a new recipe
 app.post('/recipes', async (req, res) => {
   try {
