@@ -5,7 +5,7 @@ import Header from '../components/Header.jsx';
 export default function RecipeDetail() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError]   = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:5000/recipes/${id}`)
@@ -25,11 +25,12 @@ export default function RecipeDetail() {
       </>
     );
   }
+
   if (!recipe) {
     return (
       <>
         <Header />
-        <p className="text-center py-8">Loading recipe…</p>
+        <p className="text-center py-8">Loading…</p>
       </>
     );
   }
@@ -37,29 +38,49 @@ export default function RecipeDetail() {
   return (
     <>
       <Header />
-      <main className="max-w-3xl mx-auto px-6 py-10">
-        <h2 className="text-3xl font-bold mb-4">{recipe.title}</h2>
+      <main className="max-w-3xl mx-auto px-6 py-10 space-y-8">
+        {/* 1. Title */}
+        <h1 className="text-4xl font-bold">{recipe.title}</h1>
+
+        {/* 2. Image */}
         {recipe.image && (
           <img
             src={recipe.image}
             alt={recipe.title}
-            className="w-full h-64 object-cover rounded-lg mb-6"
+            className="w-full h-64 object-cover rounded-lg"
           />
         )}
-        <p className="text-gray-700 mb-6">{recipe.description}</p>
 
-        {/* Ingredients section */}
+        {/* 3. Short teaser (description) */}
+        {recipe.description && (
+          <p className="text-gray-700 italic">
+            {recipe.description}
+          </p>
+        )}
+
+        {/* 4. Ingredients */}
         {recipe.ingredients?.length > 0 && (
-          <section className="mb-6">
-            <h3 className="text-2xl font-semibold mb-2">Ingredients</h3>
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">Ingredients</h2>
             <ul className="list-disc list-inside space-y-1 text-gray-800">
-              {recipe.ingredients.map((ing, i) => (
-                <li key={i}>{ing}</li>
+              {recipe.ingredients.map((i, idx) => (
+                <li key={idx}>{i}</li>
               ))}
             </ul>
           </section>
         )}
 
+        {/* 5. Full instructions */}
+        {recipe.instructions && (
+          <section>
+            <h2 className="text-2xl font-semibold mb-2">Instructions</h2>
+            <p className="whitespace-pre-line text-gray-800">
+              {recipe.instructions}
+            </p>
+          </section>
+        )}
+
+        {/* 6. Meta info */}
         <div className="flex space-x-4 text-sm text-gray-600">
           <span>Meal Type: {recipe.mealType || '—'}</span>
           <span>Popularity: {recipe.popularity}</span>

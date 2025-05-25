@@ -39,6 +39,7 @@ async function seed() {
         recipes.push({
           title:       row.Title.trim(),
           description: row.Instructions.trim().slice(0, 300),
+          instructions: row.Instructions.trim(),
           image:       row.Image_Name
                         ? `http://localhost:5000/images/${row.Image_Name}.jpg`
                         : '',
