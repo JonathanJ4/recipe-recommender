@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-white shadow-md">
       <div className="max-w-4xl mx-auto flex justify-between items-center py-4 px-6">
         <Link to="/" className="text-2xl font-bold flex items-center text-olive">
-          <span role="img" aria-label="fork and knife">🍽️</span>
+          <span role="img" aria-label="fork and knife"></span>
           <span className="ml-2">Recipe Hub</span>
         </Link>
         <nav className="space-x-4">

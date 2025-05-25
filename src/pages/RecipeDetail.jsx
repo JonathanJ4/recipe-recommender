@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
-import RecipeCard from '../components/RecipeCard.jsx'; // optionally reuse
 
 export default function RecipeDetail() {
   const { id } = useParams();
@@ -40,14 +39,31 @@ export default function RecipeDetail() {
       <Header />
       <main className="max-w-3xl mx-auto px-6 py-10">
         <h2 className="text-3xl font-bold mb-4">{recipe.title}</h2>
-        <img
-          src={recipe.image}
-          alt={recipe.title}
-          className="w-full h-64 object-cover rounded-lg mb-6"
-        />
-        <p className="text-gray-700 mb-4">{recipe.description}</p>
-        <p className="font-medium">Meal Type: {recipe.mealType}</p>
-        <p className="font-medium">Popularity: {recipe.popularity}</p>
+        {recipe.image && (
+          <img
+            src={recipe.image}
+            alt={recipe.title}
+            className="w-full h-64 object-cover rounded-lg mb-6"
+          />
+        )}
+        <p className="text-gray-700 mb-6">{recipe.description}</p>
+
+        {/* Ingredients section */}
+        {recipe.ingredients?.length > 0 && (
+          <section className="mb-6">
+            <h3 className="text-2xl font-semibold mb-2">Ingredients</h3>
+            <ul className="list-disc list-inside space-y-1 text-gray-800">
+              {recipe.ingredients.map((ing, i) => (
+                <li key={i}>{ing}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <div className="flex space-x-4 text-sm text-gray-600">
+          <span>Meal Type: {recipe.mealType || '—'}</span>
+          <span>Popularity: {recipe.popularity}</span>
+        </div>
       </main>
     </>
   );

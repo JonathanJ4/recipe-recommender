@@ -9,15 +9,7 @@ export default function Home() {
       <Hero />
       <TrendingRecipes />
 
-      {/* Explore More */}
-      <section className="max-w-4xl mx-auto px-6 py-10">
-        <h3 className="text-2xl font-semibold mb-4">Explore More</h3>
-        <ul className="list-disc list-inside text-gray-700 space-y-2">
-          <li>Filling Breakfast Ideas</li>
-          <li>Delicious Lunch Recipes</li>
-          <li>Cozy Dinner Ideas</li>
-        </ul>
-      </section>
+     
 
       {/* Call to Action */}
       <section className="bg-white">
