@@ -1,12 +1,31 @@
-# React + Vite
+Project: Recipe Hub 🍽️
+Recipe Hub is a full-stack recipe recommender web app where users can explore trending recipes and search for new meal ideas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Key Features:
+🍳 Search Recipes – Filter and discover recipes by keywords
 
-Currently, two official plugins are available:
+🥗 Trending Recipes – View a curated list of popular dishes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🗂️ Ingredients List – Each recipe displays a list of cleaned ingredients
 
-## Expanding the ESLint configuration
+🖼️ S3 Image Hosting – Images are stored in AWS S3 for scalable delivery
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌐 MongoDB Integration – Recipe data is stored and managed in MongoDB
+
+⚡ Responsive Frontend – Built with Vite, Tailwind CSS, and React
+
+Tech Stack:
+| Frontend     | Backend           | Database      | Storage |
+| ------------ | ----------------- | ------------- | ------- |
+| React / Vite | Node.js / Express | MongoDB Atlas | AWS S3  |
+
+
+Purpose:
+This project is designed to:
+
+Practice full-stack development skills
+
+Learn cloud services like AWS S3 and MongoDB Atlas
+
+Implement real-world API interactions and data storage
+
