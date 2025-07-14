@@ -29,3 +29,13 @@ Learn cloud services like AWS S3 and MongoDB Atlas
 
 Implement real-world API interactions and data storage
 
+
+Usage:
+Clone the repo
+
+Run the backend server (/server)
+
+Start the frontend client (/src)
+
+Search or browse recipes!
+
