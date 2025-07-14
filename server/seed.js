@@ -40,9 +40,10 @@ async function seed() {
           title:       row.Title.trim(),
           description: row.Instructions.trim().slice(0, 300),
           instructions: row.Instructions.trim(),
-          image:       row.Image_Name
-                        ? `http://localhost:5000/images/${row.Image_Name}.jpg`
-                        : '',
+          image: row.Image_Name
+                 ? `https://recipehub-images.s3.us-east-1.amazonaws.com/${row.Image_Name}.jpg`
+                 : '',
+
           mealType:    '',                     // leave blank for now
           popularity:  ingList.length,
           ingredients: ingList
