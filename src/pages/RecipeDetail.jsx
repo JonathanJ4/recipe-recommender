@@ -2,13 +2,15 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function RecipeDetail() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
   const [error, setError]   = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/recipes/${id}`)
+    fetch(`${API_URL}/recipes/${id}`)
       .then(res => {
         if (!res.ok) throw new Error('Recipe not found');
         return res.json();

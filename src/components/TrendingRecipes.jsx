@@ -2,12 +2,14 @@
 import { useEffect, useState } from 'react';
 import RecipeCard from './RecipeCard.jsx';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function TrendingRecipes() {
   const [recipes, setRecipes] = useState(null);
   const [error, setError]     = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/recipes/trending')
+    fetch(`${API_URL}/recipes/trending`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to load trending');
         return res.json();

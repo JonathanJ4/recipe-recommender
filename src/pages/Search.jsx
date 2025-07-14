@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 import Header from '../components/Header.jsx';
 import RecipeCard from '../components/RecipeCard.jsx';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function Search() {
   const [recipes, setRecipes] = useState(null);
   const [query, setQuery] = useState('');
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/recipes')
+    fetch(`${API_URL}/recipes`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch recipes');
         return res.json();
