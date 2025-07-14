@@ -1,4 +1,4 @@
-Project: Recipe Hub 🍽️
+# Project: Recipe Hub 🍽️
 Recipe Hub is a full-stack recipe recommender web app where users can explore trending recipes and search for new meal ideas.
 
 Key Features:
