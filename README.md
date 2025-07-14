@@ -41,4 +41,7 @@ This project is designed to:
 
    ```bash
    npm install
-   npm run dev
+   npm start
+3. **Navigate to `/src` and run:**
+    ```bash
+    npm run dev
